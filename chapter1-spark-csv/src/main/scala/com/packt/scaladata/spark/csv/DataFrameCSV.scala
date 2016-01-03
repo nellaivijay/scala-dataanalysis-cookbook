@@ -10,10 +10,10 @@ import org.apache.spark.sql.DataFrame
 
 
 object DataFrameCSV extends App{
-  
+  // Local
   //The SparkConf holds all the information for running this Spark 'cluster'   
   //For this recipe, we are running locally. And we intend to use just 2 cores in the machine - local[2]
-  val conf = new SparkConf().setAppName("csvDataFrame").setMaster("local[2]")
+  val conf = new SparkConf().setAppName("csvDataFrame").setMaster("local[3]")
   
   //Initialize Spark context with Spark configuration.  This is the core entry point to do anything with Spark
   val sc = new SparkContext(conf)

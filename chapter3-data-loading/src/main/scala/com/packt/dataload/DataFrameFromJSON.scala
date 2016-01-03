@@ -16,7 +16,7 @@ object DataFrameFromJSON extends App {
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
 
-  val dFrame=sqlContext.jsonFile("/Users/Gabriel/Dropbox/arun/ScalaDataAnalysis/Code/scaladataanalysisCB-tower/chapter3-data-loading/profiles.json")
+  val dFrame=sqlContext.jsonFile("profiles.json")
 
   //val dFrame = sqlContext.jsonFile("hdfs://localhost:9000/data/scalada/profiles.json")
   dFrame.printSchema()
@@ -24,7 +24,7 @@ object DataFrameFromJSON extends App {
 
   //Using JSONRDD
   //val strRDD = sc.textFile("hdfs://localhost:9000/data/scalada/profiles.json")
-  val strRDD = sc.textFile("/Users/Gabriel/Dropbox/arun/ScalaDataAnalysis/Code/scala-dataanalysis-cookbook/chapter3-data-loading/profiles.json")
+  val strRDD = sc.textFile("profiles.json")
   val jsonDf = sqlContext.jsonRDD(strRDD)
 
   jsonDf.printSchema()
